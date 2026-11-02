@@ -4,880 +4,392 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Rafi'e — Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality." />
-  <title>Rafi'e Or Rafie That is me</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rafi'e — AI Researcher" />
+  <meta property="og:description" content="Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality." />
+  <meta property="og:url" content="https://rafie93.github.io/" />
+  <title>Rafi'e — AI Researcher</title>
 
   <style>
     :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
       --text: #171717;
-      --muted: #666;
+      --muted: #5c5c5c;
       --line: #e7e7e7;
       --soft: #f6f6f3;
       --accent: #1d4ed8;
+      --nav-bg: rgba(255,255,255,.94);
+      --faint: #767676;
       --max: 1080px;
     }
 
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --text: #ececec;
+        --muted: #a5a9b0;
+        --line: #2a2e36;
+        --soft: #171a20;
+        --accent: #7aa2ff;
+        --nav-bg: rgba(15,17,21,.94);
+        --faint: #9a9fa8;
+      }
     }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
     body {
       margin: 0;
       color: var(--text);
-      background: #fff;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", sans-serif;
+      background: var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.7;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--accent);
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .hero {
-      padding: 92px 0 78px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.55fr .75fr;
-      gap: 70px;
-      align-items: end;
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(48px, 8vw, 86px);
-      line-height: .95;
-      letter-spacing: -.055em;
-    }
-
-    .hero-title {
-      margin: 24px 0 0;
-      max-width: 720px;
-      font-size: clamp(22px, 3vw, 34px);
-      line-height: 1.25;
-      letter-spacing: -.025em;
-    }
-
-    .hero-text {
-      max-width: 680px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .links {
-      display: flex;
-      gap: 18px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .links a {
-      border-bottom: 1px solid currentColor;
-    }
-
-    .profile-note {
-      padding: 24px;
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      font-size: 14px;
-    }
-
-    .profile-note strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    section {
-      padding: 76px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 40px;
-      margin-bottom: 38px;
-    }
-
-    .section-number {
-      color: #999;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .08em;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .section-intro {
-      max-width: 720px;
-      color: var(--muted);
-      margin: 12px 0 0;
-    }
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .research-card {
-      padding: 28px;
-      min-height: 235px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      transition: transform .18s ease, border-color .18s ease;
-    }
-
-    .research-card:hover {
-      transform: translateY(-3px);
-      border-color: #bbb;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #555;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .research-card h3 {
-      margin: 0 0 10px;
-      font-size: 23px;
-      line-height: 1.25;
-      letter-spacing: -.025em;
-    }
-
-    .research-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .card-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 22px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .publication {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 28px;
-      padding: 24px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .publication:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pub-year {
-      color: #777;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .publication h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    .publication p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .open-source {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .repo {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-    }
-
-    .repo h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
-
-    .repo p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .about-grid p {
-      color: var(--muted);
-    }
-
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 10px 22px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 700;
-      transition: border-color .18s ease, color .18s ease;
-    }
-
-    .btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .btn:focus-visible {
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
 
-    footer {
-      padding: 38px 0 55px;
-      color: #777;
-      font-size: 13px;
-    }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
+    .nav-inner {
+      min-height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-weight: 800; letter-spacing: -.03em; }
+    .nav-right { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+
+    .lang-switch { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+    .lang-switch button {
+      font: inherit; font-size: 12px; font-weight: 800;
+      padding: 4px 12px; border: 0; cursor: pointer;
+      background: transparent; color: var(--muted);
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+
+    .hero { padding: 92px 0 78px; border-bottom: 1px solid var(--line); }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.55fr .75fr;
+      gap: 70px; align-items: end;
+    }
+    .eyebrow {
+      margin: 0 0 14px; color: var(--accent);
+      font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: .95; letter-spacing: -.055em;
+    }
+    .hero-title {
+      margin: 24px 0 0; max-width: 720px;
+      font-size: clamp(22px, 3vw, 34px); line-height: 1.25; letter-spacing: -.025em;
+    }
+    .hero-text { max-width: 680px; margin: 20px 0 0; color: var(--muted); font-size: 17px; }
+    .links { display: flex; gap: 18px; margin-top: 28px; flex-wrap: wrap; font-size: 14px; font-weight: 700; }
+    .links a { border-bottom: 1px solid currentColor; }
+
+    .profile-note {
+      padding: 24px; background: var(--soft);
+      border: 1px solid var(--line); border-radius: 16px; font-size: 14px;
+      color: var(--muted);
+    }
+    .profile-note strong { display: block; margin-bottom: 8px; color: var(--text); }
+
+    section { padding: 76px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 40px; margin-bottom: 38px; }
+    .section-number { color: var(--faint); font-size: 13px; font-weight: 800; letter-spacing: .08em; }
+    h2 { margin: 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.05; letter-spacing: -.04em; }
+    .section-intro { max-width: 720px; color: var(--muted); margin: 12px 0 0; }
+
+    .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .research-card {
+      padding: 28px; min-height: 200px;
+      border: 1px solid var(--line); border-radius: 16px;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .research-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .tag {
+      display: inline-block; margin-bottom: 18px; padding: 5px 9px;
+      border: 1px solid var(--line); border-radius: 999px;
+      color: var(--muted); font-size: 12px; font-weight: 700;
+    }
+    .research-card h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.25; letter-spacing: -.025em; }
+    .research-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .year-group { margin-top: 8px; }
+    .year-group > h3 { margin: 0 0 8px; font-size: 14px; color: var(--faint); letter-spacing: .08em; }
+    .publication { padding: 22px 0; border-top: 1px solid var(--line); }
+    .publication h4 { margin: 0 0 6px; font-size: 18px; line-height: 1.4; }
+    .publication p { margin: 0; color: var(--muted); font-size: 14px; }
+    .status { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700; color: var(--accent); }
+
+    .open-source { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .repo { padding: 22px; border: 1px solid var(--line); border-radius: 14px; }
+    .repo h3 { margin: 0 0 8px; font-size: 17px; }
+    .repo p { margin: 0; color: var(--muted); font-size: 13px; }
+    .card-links { display: flex; gap: 15px; margin-top: 16px; font-size: 13px; font-weight: 700; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .about-grid p { color: var(--muted); }
+
+    .contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 10px 22px;
+      border: 1px solid var(--line); border-radius: 14px;
+      background: var(--bg); color: var(--text);
+      font-size: 14px; font-weight: 700;
+      transition: border-color .18s ease, color .18s ease;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer { padding: 38px 0 55px; color: var(--faint); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 800px) {
-      .hero-grid,
-      .section-head,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .research-grid,
-      .open-source {
-        grid-template-columns: 1fr;
-      }
-
-      .publication {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .nav-inner {
-        align-items: flex-start;
-        padding: 14px 0;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .contact-buttons {
-        flex-direction: column;
-      }
-
-      .contact-buttons .btn {
-        width: 100%;
-      }
+      .hero-grid, .section-head, .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .research-grid, .open-source { grid-template-columns: 1fr; }
+      .nav-inner { align-items: flex-start; padding: 12px 0; flex-direction: column; gap: 8px; }
+      .nav-right { gap: 12px; }
+      .nav-links { gap: 14px; }
+      .hero { padding-top: 60px; }
+      .contact-buttons { flex-direction: column; }
+      .contact-buttons .btn { width: 100%; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
+  <nav aria-label="Main">
     <div class="container nav-inner">
-      <a class="brand" href="#">Rafi'e</a>
-
-      <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="#top">Rafi'e</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#research" data-i18n="nav_research">Research</a>
+          <a href="#publications" data-i18n="nav_publications">Publications</a>
+          <a href="#projects" data-i18n="nav_projects">Open Source</a>
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="id" aria-pressed="false">ID</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="container hero-grid">
-
       <div>
-        <p class="eyebrow">AI · Mobile Computing · Research</p>
-
-        <h1>Rafie Or Rafi'e That is me</h1>
-
-        <p class="hero-title">
-          Mobile Computing, Machine Learning & Edge AI
-        </p>
-
-        <p class="hero-text">
-          Lecturer and researcher exploring practical AI systems for
-          real-world problems, with a focus on computer vision, edge AI,
-          IoT, environmental intelligence, and low-cost interactive
-          technologies.
-        </p>
-
+        <p class="eyebrow" data-i18n="hero_eyebrow">AI · Mobile Computing · Research</p>
+        <h1>Rafi'e</h1>
+        <p class="hero-title" data-i18n="hero_title">Mobile Computing, Machine Learning &amp; Edge AI</p>
+        <p class="hero-text" data-i18n="hero_text">Lecturer and researcher exploring practical AI systems for real-world problems, with a focus on computer vision, edge AI, IoT, environmental intelligence, and low-cost interactive technologies.</p>
         <div class="links">
-          <a href="https://github.com/Rafie93" target="_blank" rel="noopener">
-            GitHub ↗
-          </a>
-
-          <a href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&hl=id" target="_blank" rel="noopener">
-            Google Scholar ↗
-          </a>
-
-          <a href="#publications">Publications ↓</a>
+          <a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&amp;hl=id" target="_blank" rel="noopener">Google Scholar ↗</a>
+          <a href="#publications" data-i18n="hero_pubs">Publications ↓</a>
         </div>
       </div>
 
       <aside class="profile-note">
-        <strong>Research Philosophy</strong>
-        Build useful, reproducible, and accessible intelligent systems
-        using affordable hardware, open-source software, and rigorous
-        experimental methods.
+        <strong data-i18n="phil_title">Research Philosophy</strong>
+        <span data-i18n="phil_text">Build useful, reproducible, and accessible intelligent systems using affordable hardware, open-source software, and rigorous experimental methods.</span>
       </aside>
-
     </div>
   </header>
 
-
   <main>
 
-    <!-- <section id="research">
+    <section id="research">
       <div class="container">
-
         <div class="section-head">
-          <div class="section-number">01 / RESEARCH</div>
-
+          <div class="section-number" data-i18n="research_num">01 / RESEARCH</div>
           <div>
-            <h2>Research Areas</h2>
-            <p class="section-intro">
-              Research directions connecting artificial intelligence
-              with  edge computing,computer vision, sensing, simulation,
-              and environmental problems.
-            </p>
+            <h2 data-i18n="research_h">Research Areas</h2>
+            <p class="section-intro" data-i18n="research_intro">Research directions connecting artificial intelligence with edge computing, computer vision, sensing, simulation, and environmental problems.</p>
           </div>
         </div>
 
         <div class="research-grid">
-
           <article class="research-card">
-            <span class="tag">EDGE AI</span>
-
-            <h3>Edge Intelligence</h3>
-
-            <p>
-              Lightweight AI models and real-time inference on
-              resource-constrained devices such as Raspberry Pi
-              and microcontrollers.
-            </p>
-
-            <div class="card-links">
-              <a href="#projects">Projects →</a>
-            </div>
+            <span class="tag">AI</span>
+            <h3 data-i18n="r1_h">Applied Artificial Intelligence</h3>
+            <p data-i18n="r1_p">Machine learning for practical, real-world problems, built with reproducible experimental methods.</p>
           </article>
-
-
           <article class="research-card">
             <span class="tag">COMPUTER VISION</span>
-
-            <h3>Computer Vision</h3>
-
-            <p>
-              Visual recognition, detection, classification, and
-              image-based analysis for practical applications.
-            </p>
-
-            <div class="card-links">
-              <a href="#projects">Projects →</a>
-            </div>
+            <h3 data-i18n="r2_h">Computer Vision</h3>
+            <p data-i18n="r2_p">Visual recognition, detection, classification, and image-based analysis for practical applications.</p>
           </article>
-
-
           <article class="research-card">
-            <span class="tag">AI + IoT</span>
-
-            <h3>AI & Sensing Systems</h3>
-
-            <p>
-              Integration of sensors, embedded systems, computer vision,
-              and machine learning into low-cost intelligent systems.
-            </p>
-
-            <div class="card-links">
-              <a href="#projects">Projects →</a>
-            </div>
+            <span class="tag">EDGE AI</span>
+            <h3 data-i18n="r3_h">Edge Intelligence</h3>
+            <p data-i18n="r3_p">Lightweight AI models and real-time inference on resource-constrained devices such as Raspberry Pi and microcontrollers.</p>
           </article>
-
-
           <article class="research-card">
-            <span class="tag">ENVIRONMENT</span>
-
-            <h3>Environmental AI</h3>
-
-            <p>
-              AI and geospatial technologies for environmental monitoring,
-              including forest and land fire analysis in South Kalimantan.
-            </p>
-
-            <div class="card-links">
-              <a href="#projects">Projects →</a>
-            </div>
+            <span class="tag">IoT</span>
+            <h3 data-i18n="r4_h">AI &amp; Sensing Systems</h3>
+            <p data-i18n="r4_p">Integration of sensors, embedded systems, and machine learning into low-cost intelligent systems.</p>
           </article>
-
-
           <article class="research-card">
-            <span class="tag">VR / SERIOUS GAMES</span>
-
-            <h3>Virtual Reality & Simulation</h3>
-
-            <p>
-              Low-cost VR and serious-game approaches for simulation,
-              learning, training, and interactive experimentation.
-            </p>
-
-            <div class="card-links">
-              <a href="#projects">Projects →</a>
-            </div>
+            <span class="tag">VR</span>
+            <h3 data-i18n="r5_h">Virtual Reality &amp; Simulation</h3>
+            <p data-i18n="r5_p">Low-cost VR and serious-game approaches for simulation, learning, training, and interactive experimentation.</p>
           </article>
-
-
-          <article class="research-card">
-            <span class="tag">OPEN SCIENCE</span>
-
-            <h3>Reproducible Research</h3>
-
-            <p>
-              Research workflows supported by open-source code,
-              public datasets, documented experiments, and reproducible
-              computational methods.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93" target="_blank" rel="noopener">
-                GitHub → 
-              </a>
-            </div>
-          </article>
-
         </div>
       </div>
-    </section> -->
-
+    </section>
 
     <section id="publications">
       <div class="container">
-
         <div class="section-head">
-          <div class="section-number"> PUBLICATIONS</div>
-
+          <div class="section-number" data-i18n="pub_num">02 / PUBLICATIONS</div>
           <div>
-            <h2>Publications</h2>
-
+            <h2 data-i18n="pub_h">Publications</h2>
             <p class="section-intro">
-              Research publications, manuscripts, and ongoing work.
-              Replace the placeholder entries below with your actual
-              publication metadata.
+              <span data-i18n="pub_intro">Research publications, manuscripts, and ongoing work. Full list on</span>
+              <a href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&amp;hl=id" target="_blank" rel="noopener" style="text-decoration:underline">Google Scholar</a>.
             </p>
           </div>
         </div>
 
+        <div class="year-group">
+          <h3>2026</h3>
 
-        <div class="publication">
-          <div class="pub-year">2026</div>
+          <div class="publication">
+            <h4>Real-Time Drowsiness Detection Using Dual MobileNetV2 Models on Desktop and Edge Devices</h4>
+            <p>Computer Vision · Edge AI · MobileNetV2 · Raspberry Pi</p>
+            <span class="status" data-i18n="st_manuscript">Research / Manuscript</span>
+          </div>
 
-          <div>
-            <h3>
-              Real-Time Drowsiness Detection Using Dual MobileNetV2 Models
-              on Desktop and Edge Devices
-            </h3>
+          <div class="publication">
+            <h4>Low-Cost Edge AI for Food Safety and Synthetic Colorant Detection</h4>
+            <p>Computer Vision · IoT · Edge AI · Food Safety</p>
+            <span class="status" data-i18n="st_progress">Research in Progress</span>
+          </div>
 
-            <p>
-              Computer Vision · Edge AI · MobileNetV2 · Raspberry Pi
-            </p>
+          <div class="publication">
+            <h4>AI-Based Analysis of Pole and Cable Infrastructure Using Computer Vision and GIS</h4>
+            <p>Computer Vision · GIS · PostGIS · Infrastructure Analytics</p>
+            <span class="status" data-i18n="st_progress">Research in Progress</span>
+          </div>
 
-            <span class="status">Research / Manuscript</span>
+          <div class="publication">
+            <h4>AI-Based Forest and Land Fire Monitoring in South Kalimantan</h4>
+            <p>Environmental AI · Remote Sensing · Computer Vision</p>
+            <span class="status" data-i18n="st_proposal">Research Proposal</span>
           </div>
         </div>
-
-
-        <div class="publication">
-          <div class="pub-year">2026</div>
-
-          <div>
-            <h3>
-              Low-Cost Edge AI for Food Safety and Synthetic Colorant Detection
-            </h3>
-
-            <p>
-              Computer Vision · IoT · Edge AI · Food Safety
-            </p>
-
-            <span class="status">Research in Progress</span>
-          </div>
-        </div>
-
-
-        <div class="publication">
-          <div class="pub-year">2026</div>
-
-          <div>
-            <h3>
-              AI-Based Analysis of Pole and Cable Infrastructure
-              Using Computer Vision and GIS
-            </h3>
-
-            <p>
-              Computer Vision · GIS · PostGIS · Infrastructure Analytics
-            </p>
-
-            <span class="status">Research in Progress</span>
-          </div>
-        </div>
-
-
-        <div class="publication">
-          <div class="pub-year">2026</div>
-
-          <div>
-            <h3>
-              AI-Based Forest and Land Fire Monitoring in South Kalimantan
-            </h3>
-
-            <p>
-              Environmental AI · Remote Sensing · Computer Vision
-            </p>
-
-            <span class="status">Research Proposal</span>
-          </div>
-        </div>
-
       </div>
     </section>
-
 
     <section id="projects">
       <div class="container">
-
         <div class="section-head">
-          <div class="section-number">03 / PROJECTS</div>
-
+          <div class="section-number" data-i18n="proj_num">03 / OPEN SOURCE</div>
           <div>
-            <h2>Research Projects</h2>
-
-            <p class="section-intro">
-              Selected research prototypes and open-source projects.
-            </p>
+            <h2 data-i18n="proj_h">Open Source Projects</h2>
+            <p class="section-intro" data-i18n="proj_intro">Selected research prototypes and open-source projects.</p>
           </div>
         </div>
 
-
         <div class="open-source">
-
           <article class="repo">
             <h3>Drowsiness Edge AI</h3>
-
-            <p>
-              Real-time driver drowsiness detection using lightweight
-              deep-learning models.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <p data-i18n="p1">Real-time driver drowsiness detection using lightweight deep-learning models.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
-
           <article class="repo">
             <h3>Food Safety Edge AI</h3>
-
-            <p>
-              Low-cost sensing and computer vision for food-colorant
-              analysis.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <p data-i18n="p2">Low-cost sensing and computer vision for food-colorant analysis.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
-
           <article class="repo">
-            <h3>Pole & Cable AI</h3>
-
-            <p>
-              WebGIS and computer vision for telecommunications
-              infrastructure assessment.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <h3>Pole &amp; Cable AI</h3>
+            <p data-i18n="p3">WebGIS and computer vision for telecommunications infrastructure assessment.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
-
           <article class="repo">
             <h3>Environmental AI</h3>
-
-            <p>
-              Research platform for AI-assisted forest and land
-              fire analysis.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <p data-i18n="p4">Research platform for AI-assisted forest and land fire analysis.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
-
           <article class="repo">
             <h3>VR Serious Games</h3>
-
-            <p>
-              Low-cost VR simulation experiments using embedded
-              sensors and interactive environments.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <p data-i18n="p5">Low-cost VR simulation experiments using embedded sensors and interactive environments.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
-
           <article class="repo">
             <h3>SIAMANG</h3>
-
-            <p>
-              Experimental AI working-partner system for research
-              and software development workflows.
-            </p>
-
-            <div class="card-links">
-              <a href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub →
-              </a>
-            </div>
+            <p data-i18n="p6">Experimental AI working-partner system for research and software development workflows.</p>
+            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
           </article>
-
         </div>
       </div>
     </section>
-
 
     <section id="about">
       <div class="container">
-
         <div class="section-head">
-          <div class="section-number">04 / ABOUT</div>
-
+          <div class="section-number" data-i18n="about_num">04 / ABOUT</div>
           <div>
-            <h2>About</h2>
-
-            <p class="section-intro">
-              A short academic profile. This section can later be expanded
-              with education, academic position, research interests,
-              affiliations, and CV.
-            </p>
+            <h2 data-i18n="about_h">About</h2>
+            <p class="section-intro" data-i18n="about_intro">Lecturer and researcher in applied artificial intelligence.</p>
           </div>
         </div>
-
 
         <div class="about-grid">
-
           <div>
-            <h3>Research</h3>
-
-            <p>
-              My work focuses on applied artificial intelligence,
-              computer vision, edge intelligence, IoT, and interactive
-              technologies. I am particularly interested in research
-              that can be implemented using affordable and accessible
-              computing platforms.
-            </p>
+            <h3 data-i18n="about_r_h">Research</h3>
+            <p data-i18n="about_r_p">My work focuses on applied artificial intelligence, computer vision, edge intelligence, IoT, and interactive technologies. I am particularly interested in research that can be implemented using affordable and accessible computing platforms.</p>
           </div>
-
-
           <div>
-            <h3>Open Science</h3>
-
-            <p>
-              Research outputs are intended to be supported by
-              documented source code, experimental results, datasets
-              where possible, and reproducible workflows.
-            </p>
+            <h3 data-i18n="about_o_h">Open Science</h3>
+            <p data-i18n="about_o_p">Research outputs are intended to be supported by documented source code, experimental results, datasets where possible, and reproducible workflows.</p>
           </div>
-
         </div>
-
       </div>
     </section>
 
-
     <section id="contact">
       <div class="container">
-
         <div class="section-head">
-          <div class="section-number">05 / CONTACT</div>
-
+          <div class="section-number" data-i18n="contact_num">05 / CONTACT</div>
           <div>
-            <h2>Let's Collaborate</h2>
-
-            <p class="section-intro">
-              Interested in research collaboration, student projects,
-              AI, computer vision, edge computing, IoT, or serious games?
-              Feel free to get in touch.
-            </p>
+            <h2 data-i18n="contact_h">Let's Collaborate</h2>
+            <p class="section-intro" data-i18n="contact_intro">Interested in research collaboration, student projects, AI, computer vision, edge computing, IoT, or serious games? Feel free to get in touch.</p>
 
             <div class="contact-buttons">
               <a class="btn" href="mailto:rafiekom@gmail.com">Email</a>
-
-              <a class="btn"
-                 href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&hl=id"
-                 target="_blank" rel="noopener">
-                Google Scholar ↗
-              </a>
-
-              <a class="btn" href="https://github.com/Rafie93"
-                 target="_blank" rel="noopener">
-                GitHub ↗
-              </a>
-
+              <a class="btn" href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&amp;hl=id" target="_blank" rel="noopener">Google Scholar ↗</a>
+              <a class="btn" href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub ↗</a>
               <!-- LinkedIn: hidden until the URL is provided.
                    To enable, replace YOUR-LINKEDIN-URL and uncomment:
-              <a class="btn" href="YOUR-LINKEDIN-URL"
-                 target="_blank" rel="noopener">
-                LinkedIn ↗
-              </a>
+              <a class="btn" href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener">LinkedIn ↗</a>
               -->
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
   </main>
-
 
   <footer>
     <div class="container footer-inner">
@@ -886,5 +398,120 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var T = {
+        en: {
+          title: "Rafi'e — AI Researcher",
+          desc: "Rafi'e — Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality.",
+          nav_research: "Research", nav_publications: "Publications", nav_projects: "Open Source", nav_about: "About", nav_contact: "Contact",
+          hero_eyebrow: "AI · Mobile Computing · Research",
+          hero_title: "Mobile Computing, Machine Learning & Edge AI",
+          hero_text: "Lecturer and researcher exploring practical AI systems for real-world problems, with a focus on computer vision, edge AI, IoT, environmental intelligence, and low-cost interactive technologies.",
+          hero_pubs: "Publications ↓",
+          phil_title: "Research Philosophy",
+          phil_text: "Build useful, reproducible, and accessible intelligent systems using affordable hardware, open-source software, and rigorous experimental methods.",
+          research_num: "01 / RESEARCH", research_h: "Research Areas",
+          research_intro: "Research directions connecting artificial intelligence with edge computing, computer vision, sensing, simulation, and environmental problems.",
+          r1_h: "Applied Artificial Intelligence", r1_p: "Machine learning for practical, real-world problems, built with reproducible experimental methods.",
+          r2_h: "Computer Vision", r2_p: "Visual recognition, detection, classification, and image-based analysis for practical applications.",
+          r3_h: "Edge Intelligence", r3_p: "Lightweight AI models and real-time inference on resource-constrained devices such as Raspberry Pi and microcontrollers.",
+          r4_h: "AI & Sensing Systems", r4_p: "Integration of sensors, embedded systems, and machine learning into low-cost intelligent systems.",
+          r5_h: "Virtual Reality & Simulation", r5_p: "Low-cost VR and serious-game approaches for simulation, learning, training, and interactive experimentation.",
+          pub_num: "02 / PUBLICATIONS", pub_h: "Publications",
+          pub_intro: "Research publications, manuscripts, and ongoing work. Full list on",
+          st_manuscript: "Research / Manuscript", st_progress: "Research in Progress", st_proposal: "Research Proposal",
+          proj_num: "03 / OPEN SOURCE", proj_h: "Open Source Projects", proj_intro: "Selected research prototypes and open-source projects.",
+          p1: "Real-time driver drowsiness detection using lightweight deep-learning models.",
+          p2: "Low-cost sensing and computer vision for food-colorant analysis.",
+          p3: "WebGIS and computer vision for telecommunications infrastructure assessment.",
+          p4: "Research platform for AI-assisted forest and land fire analysis.",
+          p5: "Low-cost VR simulation experiments using embedded sensors and interactive environments.",
+          p6: "Experimental AI working-partner system for research and software development workflows.",
+          about_num: "04 / ABOUT", about_h: "About", about_intro: "Lecturer and researcher in applied artificial intelligence.",
+          about_r_h: "Research",
+          about_r_p: "My work focuses on applied artificial intelligence, computer vision, edge intelligence, IoT, and interactive technologies. I am particularly interested in research that can be implemented using affordable and accessible computing platforms.",
+          about_o_h: "Open Science",
+          about_o_p: "Research outputs are intended to be supported by documented source code, experimental results, datasets where possible, and reproducible workflows.",
+          contact_num: "05 / CONTACT", contact_h: "Let's Collaborate",
+          contact_intro: "Interested in research collaboration, student projects, AI, computer vision, edge computing, IoT, or serious games? Feel free to get in touch."
+        },
+        id: {
+          title: "Rafi'e — Peneliti AI",
+          desc: "Rafi'e — Peneliti di bidang Kecerdasan Buatan, Computer Vision, Edge AI, IoT, dan Virtual Reality.",
+          nav_research: "Riset", nav_publications: "Publikasi", nav_projects: "Open Source", nav_about: "Tentang", nav_contact: "Kontak",
+          hero_eyebrow: "AI · Komputasi Mobile · Riset",
+          hero_title: "Komputasi Mobile, Machine Learning & Edge AI",
+          hero_text: "Dosen dan peneliti yang mengeksplorasi sistem AI praktis untuk masalah dunia nyata, dengan fokus pada computer vision, edge AI, IoT, kecerdasan lingkungan, dan teknologi interaktif berbiaya rendah.",
+          hero_pubs: "Publikasi ↓",
+          phil_title: "Filosofi Riset",
+          phil_text: "Membangun sistem cerdas yang berguna, dapat direproduksi, dan mudah diakses dengan perangkat keras terjangkau, perangkat lunak sumber terbuka, dan metode eksperimen yang ketat.",
+          research_num: "01 / RISET", research_h: "Bidang Riset",
+          research_intro: "Arah riset yang menghubungkan kecerdasan buatan dengan komputasi tepi, computer vision, sensor, simulasi, dan masalah lingkungan.",
+          r1_h: "Kecerdasan Buatan Terapan", r1_p: "Machine learning untuk masalah praktis di dunia nyata, dibangun dengan metode eksperimen yang dapat direproduksi.",
+          r2_h: "Computer Vision", r2_p: "Pengenalan visual, deteksi, klasifikasi, dan analisis berbasis citra untuk aplikasi praktis.",
+          r3_h: "Edge Intelligence", r3_p: "Model AI ringan dan inferensi real-time pada perangkat dengan sumber daya terbatas seperti Raspberry Pi dan mikrokontroler.",
+          r4_h: "Sistem AI & Sensor", r4_p: "Integrasi sensor, sistem tertanam, dan machine learning menjadi sistem cerdas berbiaya rendah.",
+          r5_h: "Virtual Reality & Simulasi", r5_p: "Pendekatan VR dan serious game berbiaya rendah untuk simulasi, pembelajaran, pelatihan, dan eksperimen interaktif.",
+          pub_num: "02 / PUBLIKASI", pub_h: "Publikasi",
+          pub_intro: "Publikasi riset, naskah, dan pekerjaan yang sedang berjalan. Daftar lengkap di",
+          st_manuscript: "Riset / Naskah", st_progress: "Riset Sedang Berjalan", st_proposal: "Proposal Riset",
+          proj_num: "03 / OPEN SOURCE", proj_h: "Proyek Open Source", proj_intro: "Pilihan prototipe riset dan proyek sumber terbuka.",
+          p1: "Deteksi kantuk pengemudi secara real-time menggunakan model deep learning ringan.",
+          p2: "Sensor berbiaya rendah dan computer vision untuk analisis pewarna makanan.",
+          p3: "WebGIS dan computer vision untuk penilaian infrastruktur telekomunikasi.",
+          p4: "Platform riset untuk analisis kebakaran hutan dan lahan berbantuan AI.",
+          p5: "Eksperimen simulasi VR berbiaya rendah dengan sensor tertanam dan lingkungan interaktif.",
+          p6: "Sistem mitra kerja AI eksperimental untuk alur kerja riset dan pengembangan perangkat lunak.",
+          about_num: "04 / TENTANG", about_h: "Tentang", about_intro: "Dosen dan peneliti di bidang kecerdasan buatan terapan.",
+          about_r_h: "Riset",
+          about_r_p: "Pekerjaan saya berfokus pada kecerdasan buatan terapan, computer vision, edge intelligence, IoT, dan teknologi interaktif. Saya terutama tertarik pada riset yang dapat diterapkan di platform komputasi yang terjangkau dan mudah diakses.",
+          about_o_h: "Sains Terbuka",
+          about_o_p: "Hasil riset didukung kode sumber yang terdokumentasi, hasil eksperimen, dataset jika memungkinkan, dan alur kerja yang dapat direproduksi.",
+          contact_num: "05 / KONTAK", contact_h: "Mari Berkolaborasi",
+          contact_intro: "Tertarik pada kolaborasi riset, proyek mahasiswa, AI, computer vision, edge computing, IoT, atau serious game? Silakan hubungi saya."
+        }
+      };
+
+      var KEY = "lang";
+
+      function initial() {
+        try {
+          var s = localStorage.getItem(KEY);
+          if (s === "en" || s === "id") return s;
+        } catch (e) {}
+        var n = (navigator.language || "en").toLowerCase();
+        return n.indexOf("id") === 0 ? "id" : "en";
+      }
+
+      function apply(lang) {
+        var d = T[lang];
+        document.documentElement.lang = lang;
+        document.title = d.title;
+        var md = document.querySelector('meta[name="description"]');
+        if (md) md.setAttribute("content", d.desc);
+        var els = document.querySelectorAll("[data-i18n]");
+        for (var i = 0; i < els.length; i++) {
+          var k = els[i].getAttribute("data-i18n");
+          if (d[k] !== undefined) els[i].textContent = d[k];
+        }
+        var bs = document.querySelectorAll("[data-lang]");
+        for (var j = 0; j < bs.length; j++) {
+          bs[j].setAttribute("aria-pressed", bs[j].getAttribute("data-lang") === lang ? "true" : "false");
+        }
+      }
+
+      var bs = document.querySelectorAll("[data-lang]");
+      for (var i = 0; i < bs.length; i++) {
+        bs[i].addEventListener("click", function () {
+          var l = this.getAttribute("data-lang");
+          try { localStorage.setItem(KEY, l); } catch (e) {}
+          apply(l);
+        });
+      }
+
+      apply(initial());
+    })();
+  </script>
 </body>
 </html>
