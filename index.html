@@ -298,6 +298,38 @@
       color: var(--muted);
     }
 
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      transition: border-color .18s ease, color .18s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
     footer {
       padding: 38px 0 55px;
       color: #777;
@@ -341,6 +373,14 @@
 
       .hero {
         padding-top: 60px;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .contact-buttons .btn {
+        width: 100%;
       }
     }
   </style>
@@ -808,16 +848,27 @@
               Feel free to get in touch.
             </p>
 
-            <div class="links">
-              <a href="https://github.com/Rafie93"
+            <div class="contact-buttons">
+              <a class="btn" href="mailto:rafiekom@gmail.com">Email</a>
+
+              <a class="btn"
+                 href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&hl=id"
+                 target="_blank" rel="noopener">
+                Google Scholar ↗
+              </a>
+
+              <a class="btn" href="https://github.com/Rafie93"
                  target="_blank" rel="noopener">
                 GitHub ↗
               </a>
 
-              <a href="https://scholar.google.com/citations?user=j1Usyd0AAAAJ&hl=id"
+              <!-- LinkedIn: hidden until the URL is provided.
+                   To enable, replace YOUR-LINKEDIN-URL and uncomment:
+              <a class="btn" href="YOUR-LINKEDIN-URL"
                  target="_blank" rel="noopener">
-                Google Scholar ↗
+                LinkedIn ↗
               </a>
+              -->
             </div>
           </div>
         </div>
