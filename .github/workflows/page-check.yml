@@ -1,0 +1,18 @@
+name: Page check
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: index.html declares its canonical URL
+        run: |
+          if ! grep -qi '<link rel="canonical"' index.html; then
+            echo '::error file=index.html::index.html is missing <link rel="canonical" href="https://rafie93.github.io/" /> in <head>'
+            exit 1
+          fi
