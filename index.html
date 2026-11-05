@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rafi'e — Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality." />
+  <meta name="description" content="Rafi'e — Lecturer and researcher in Mobile Computing, Machine Learning &amp; Edge AI." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rafi'e — AI Researcher" />
-  <meta property="og:description" content="Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality." />
+  <meta property="og:title" content="Rafi'e — Mobile Computing, Machine Learning &amp; Edge AI" />
+  <meta property="og:description" content="Lecturer and researcher in Mobile Computing, Machine Learning &amp; Edge AI." />
   <meta property="og:url" content="https://rafie93.github.io/" />
-  <title>Rafi'e — AI Researcher</title>
+  <title>Rafi'e — Mobile Computing, Machine Learning &amp; Edge AI</title>
 
   <style>
     :root {
@@ -135,6 +135,8 @@
     .publication h4 { margin: 0 0 6px; font-size: 18px; line-height: 1.4; }
     .publication p { margin: 0; color: var(--muted); font-size: 14px; }
     .status { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700; color: var(--accent); }
+
+    .list-notice { margin: 0; color: var(--muted); font-size: 14px; }
 
     .open-source { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .repo { padding: 22px; border: 1px solid var(--line); border-radius: 14px; }
@@ -269,33 +271,9 @@
           </div>
         </div>
 
-        <div class="year-group">
-          <h3>2026</h3>
-
-          <div class="publication">
-            <h4>Real-Time Drowsiness Detection Using Dual MobileNetV2 Models on Desktop and Edge Devices</h4>
-            <p>Computer Vision · Edge AI · MobileNetV2 · Raspberry Pi</p>
-            <span class="status" data-i18n="st_manuscript">Research / Manuscript</span>
-          </div>
-
-          <div class="publication">
-            <h4>Low-Cost Edge AI for Food Safety and Synthetic Colorant Detection</h4>
-            <p>Computer Vision · IoT · Edge AI · Food Safety</p>
-            <span class="status" data-i18n="st_progress">Research in Progress</span>
-          </div>
-
-          <div class="publication">
-            <h4>AI-Based Analysis of Pole and Cable Infrastructure Using Computer Vision and GIS</h4>
-            <p>Computer Vision · GIS · PostGIS · Infrastructure Analytics</p>
-            <span class="status" data-i18n="st_progress">Research in Progress</span>
-          </div>
-
-          <div class="publication">
-            <h4>AI-Based Forest and Land Fire Monitoring in South Kalimantan</h4>
-            <p>Environmental AI · Remote Sensing · Computer Vision</p>
-            <span class="status" data-i18n="st_proposal">Research Proposal</span>
-          </div>
-        </div>
+        <div id="pub-list" aria-live="polite"></div>
+        <p class="list-notice" id="pub-fallback" data-i18n="list_failed" hidden>The list could not be loaded. Please see Google Scholar.</p>
+        <noscript><p class="list-notice">JavaScript is required to display this list. / JavaScript diperlukan untuk menampilkan daftar ini.</p></noscript>
       </div>
     </section>
 
@@ -309,38 +287,9 @@
           </div>
         </div>
 
-        <div class="open-source">
-          <article class="repo">
-            <h3>Drowsiness Edge AI</h3>
-            <p data-i18n="p1">Real-time driver drowsiness detection using lightweight deep-learning models.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-          <article class="repo">
-            <h3>Food Safety Edge AI</h3>
-            <p data-i18n="p2">Low-cost sensing and computer vision for food-colorant analysis.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-          <article class="repo">
-            <h3>Pole &amp; Cable AI</h3>
-            <p data-i18n="p3">WebGIS and computer vision for telecommunications infrastructure assessment.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-          <article class="repo">
-            <h3>Environmental AI</h3>
-            <p data-i18n="p4">Research platform for AI-assisted forest and land fire analysis.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-          <article class="repo">
-            <h3>VR Serious Games</h3>
-            <p data-i18n="p5">Low-cost VR simulation experiments using embedded sensors and interactive environments.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-          <article class="repo">
-            <h3>SIAMANG</h3>
-            <p data-i18n="p6">Experimental AI working-partner system for research and software development workflows.</p>
-            <div class="card-links"><a href="https://github.com/Rafie93" target="_blank" rel="noopener">GitHub →</a></div>
-          </article>
-        </div>
+        <div class="open-source" id="proj-list" aria-live="polite"></div>
+        <p class="list-notice" id="proj-fallback" data-i18n="list_failed_proj" hidden>The list could not be loaded. Please see GitHub.</p>
+        <noscript><p class="list-notice">JavaScript is required to display this list. / JavaScript diperlukan untuk menampilkan daftar ini.</p></noscript>
       </div>
     </section>
 
@@ -402,8 +351,8 @@
     (function () {
       var T = {
         en: {
-          title: "Rafi'e — AI Researcher",
-          desc: "Rafi'e — Researcher in Artificial Intelligence, Computer Vision, Edge AI, IoT, and Virtual Reality.",
+          title: "Rafi'e — Mobile Computing, Machine Learning & Edge AI",
+          desc: "Rafi'e — Lecturer and researcher in Mobile Computing, Machine Learning & Edge AI.",
           nav_research: "Research", nav_publications: "Publications", nav_projects: "Open Source", nav_about: "About", nav_contact: "Contact",
           hero_eyebrow: "AI · Mobile Computing · Research",
           hero_title: "Mobile Computing, Machine Learning & Edge AI",
@@ -420,14 +369,10 @@
           r5_h: "Virtual Reality & Simulation", r5_p: "Low-cost VR and serious-game approaches for simulation, learning, training, and interactive experimentation.",
           pub_num: "02 / PUBLICATIONS", pub_h: "Publications",
           pub_intro: "Research publications, manuscripts, and ongoing work. Full list on",
-          st_manuscript: "Research / Manuscript", st_progress: "Research in Progress", st_proposal: "Research Proposal",
+          list_failed: "The list could not be loaded. Please see Google Scholar.",
+          list_failed_proj: "The list could not be loaded. Please see GitHub.",
+          link_github: "GitHub →",
           proj_num: "03 / OPEN SOURCE", proj_h: "Open Source Projects", proj_intro: "Selected research prototypes and open-source projects.",
-          p1: "Real-time driver drowsiness detection using lightweight deep-learning models.",
-          p2: "Low-cost sensing and computer vision for food-colorant analysis.",
-          p3: "WebGIS and computer vision for telecommunications infrastructure assessment.",
-          p4: "Research platform for AI-assisted forest and land fire analysis.",
-          p5: "Low-cost VR simulation experiments using embedded sensors and interactive environments.",
-          p6: "Experimental AI working-partner system for research and software development workflows.",
           about_num: "04 / ABOUT", about_h: "About", about_intro: "Lecturer and researcher in applied artificial intelligence.",
           about_r_h: "Research",
           about_r_p: "My work focuses on applied artificial intelligence, computer vision, edge intelligence, IoT, and interactive technologies. I am particularly interested in research that can be implemented using affordable and accessible computing platforms.",
@@ -437,8 +382,8 @@
           contact_intro: "Interested in research collaboration, student projects, AI, computer vision, edge computing, IoT, or serious games? Feel free to get in touch."
         },
         id: {
-          title: "Rafi'e — Peneliti AI",
-          desc: "Rafi'e — Peneliti di bidang Kecerdasan Buatan, Computer Vision, Edge AI, IoT, dan Virtual Reality.",
+          title: "Rafi'e — Komputasi Mobile, Machine Learning & Edge AI",
+          desc: "Rafi'e — Dosen dan peneliti di bidang Komputasi Mobile, Machine Learning & Edge AI.",
           nav_research: "Riset", nav_publications: "Publikasi", nav_projects: "Open Source", nav_about: "Tentang", nav_contact: "Kontak",
           hero_eyebrow: "AI · Komputasi Mobile · Riset",
           hero_title: "Komputasi Mobile, Machine Learning & Edge AI",
@@ -455,14 +400,10 @@
           r5_h: "Virtual Reality & Simulasi", r5_p: "Pendekatan VR dan serious game berbiaya rendah untuk simulasi, pembelajaran, pelatihan, dan eksperimen interaktif.",
           pub_num: "02 / PUBLIKASI", pub_h: "Publikasi",
           pub_intro: "Publikasi riset, naskah, dan pekerjaan yang sedang berjalan. Daftar lengkap di",
-          st_manuscript: "Riset / Naskah", st_progress: "Riset Sedang Berjalan", st_proposal: "Proposal Riset",
+          list_failed: "Daftar tidak dapat dimuat. Silakan lihat Google Scholar.",
+          list_failed_proj: "Daftar tidak dapat dimuat. Silakan lihat GitHub.",
+          link_github: "GitHub →",
           proj_num: "03 / OPEN SOURCE", proj_h: "Proyek Open Source", proj_intro: "Pilihan prototipe riset dan proyek sumber terbuka.",
-          p1: "Deteksi kantuk pengemudi secara real-time menggunakan model deep learning ringan.",
-          p2: "Sensor berbiaya rendah dan computer vision untuk analisis pewarna makanan.",
-          p3: "WebGIS dan computer vision untuk penilaian infrastruktur telekomunikasi.",
-          p4: "Platform riset untuk analisis kebakaran hutan dan lahan berbantuan AI.",
-          p5: "Eksperimen simulasi VR berbiaya rendah dengan sensor tertanam dan lingkungan interaktif.",
-          p6: "Sistem mitra kerja AI eksperimental untuk alur kerja riset dan pengembangan perangkat lunak.",
           about_num: "04 / TENTANG", about_h: "Tentang", about_intro: "Dosen dan peneliti di bidang kecerdasan buatan terapan.",
           about_r_h: "Riset",
           about_r_p: "Pekerjaan saya berfokus pada kecerdasan buatan terapan, computer vision, edge intelligence, IoT, dan teknologi interaktif. Saya terutama tertarik pada riset yang dapat diterapkan di platform komputasi yang terjangkau dan mudah diakses.",
@@ -474,17 +415,139 @@
       };
 
       var KEY = "lang";
+      var current = "id";
 
+      /* ---- validation helpers ---- */
+      function isStr(v) { return typeof v === "string" && v.length > 0; }
+      function isLocalized(v) { return !!v && typeof v === "object" && isStr(v.en) && isStr(v.id); }
+      function isHttpUrl(v) { return typeof v === "string" && /^https?:\/\//i.test(v); }
+      function isArr(v) { return Object.prototype.toString.call(v) === "[object Array]"; }
+
+      function isPublications(j) {
+        if (!j || !isArr(j.years)) return false;
+        for (var i = 0; i < j.years.length; i++) {
+          var y = j.years[i];
+          if (!y || !isStr(y.year) || !isArr(y.items)) return false;
+          for (var k = 0; k < y.items.length; k++) {
+            var it = y.items[k];
+            if (!it || !isStr(it.title) || !isStr(it.tags) || !isLocalized(it.status)) return false;
+            if (it.url !== undefined && !isHttpUrl(it.url)) return false;
+          }
+        }
+        return true;
+      }
+
+      function isProjects(j) {
+        if (!j || !isArr(j.items)) return false;
+        for (var i = 0; i < j.items.length; i++) {
+          var it = j.items[i];
+          if (!it || !isStr(it.name) || !isLocalized(it.description) || !isHttpUrl(it.url)) return false;
+        }
+        return true;
+      }
+
+      function el(tag, cls, text) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text !== undefined) e.textContent = text;
+        return e;
+      }
+
+      /* ---- renderers ---- */
+      function renderPublications(data, lang) {
+        var f = document.createDocumentFragment();
+        data.years.forEach(function (y) {
+          var g = el("div", "year-group");
+          g.appendChild(el("h3", null, y.year));
+          y.items.forEach(function (it) {
+            var p = el("div", "publication");
+            var h = el("h4");
+            if (it.url) {
+              var a = el("a", null, it.title);
+              a.href = it.url; a.target = "_blank"; a.rel = "noopener";
+              h.appendChild(a);
+            } else {
+              h.textContent = it.title;
+            }
+            p.appendChild(h);
+            p.appendChild(el("p", null, it.tags));
+            p.appendChild(el("span", "status", it.status[lang]));
+            g.appendChild(p);
+          });
+          f.appendChild(g);
+        });
+        return f;
+      }
+
+      function renderProjects(data, lang) {
+        var f = document.createDocumentFragment();
+        data.items.forEach(function (it) {
+          var c = el("article", "repo");
+          c.appendChild(el("h3", null, it.name));
+          c.appendChild(el("p", null, it.description[lang]));
+          var l = el("div", "card-links");
+          var a = el("a", null, T[lang].link_github);
+          a.href = it.url; a.target = "_blank"; a.rel = "noopener";
+          l.appendChild(a);
+          c.appendChild(l);
+          f.appendChild(c);
+        });
+        return f;
+      }
+
+      /* ---- ListView ---- */
+      function ListView(path, mountId, fallbackId, validate, render) {
+        this.path = path;
+        this.mount = document.getElementById(mountId);
+        this.fallback = document.getElementById(fallbackId);
+        this.validate = validate;
+        this.render = render;
+        this.status = "LOADING";
+        this.data = null;
+      }
+      ListView.prototype.refresh = function (lang) {
+        if (this.status !== "READY" || !this.mount) return;
+        while (this.mount.firstChild) this.mount.removeChild(this.mount.firstChild);
+        this.mount.appendChild(this.render(this.data, lang));
+      };
+      ListView.prototype.showFallback = function () {
+        this.status = "FAILED";
+        if (this.mount) while (this.mount.firstChild) this.mount.removeChild(this.mount.firstChild);
+        if (this.fallback) this.fallback.hidden = false;
+      };
+      ListView.prototype.load = function () {
+        var self = this;
+        return fetch(this.path)
+          .then(function (r) {
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.json();
+          })
+          .then(function (j) {
+            if (!self.validate(j)) throw new Error("Invalid data");
+            self.data = j;
+            self.status = "READY";
+            if (self.fallback) self.fallback.hidden = true;
+            self.refresh(current);
+          })
+          .catch(function () { self.showFallback(); });
+      };
+
+      var views = [
+        new ListView("data/publications.json", "pub-list", "pub-fallback", isPublications, renderPublications),
+        new ListView("data/projects.json", "proj-list", "proj-fallback", isProjects, renderProjects)
+      ];
+
+      /* ---- language controller ---- */
       function initial() {
         try {
           var s = localStorage.getItem(KEY);
           if (s === "en" || s === "id") return s;
         } catch (e) {}
-        var n = (navigator.language || "en").toLowerCase();
-        return n.indexOf("id") === 0 ? "id" : "en";
+        return "id";
       }
 
       function apply(lang) {
+        current = lang;
         var d = T[lang];
         document.documentElement.lang = lang;
         document.title = d.title;
@@ -499,6 +562,7 @@
         for (var j = 0; j < bs.length; j++) {
           bs[j].setAttribute("aria-pressed", bs[j].getAttribute("data-lang") === lang ? "true" : "false");
         }
+        for (var v = 0; v < views.length; v++) views[v].refresh(lang);
       }
 
       var bs = document.querySelectorAll("[data-lang]");
@@ -511,6 +575,7 @@
       }
 
       apply(initial());
+      for (var n = 0; n < views.length; n++) views[n].load();
     })();
   </script>
 </body>
