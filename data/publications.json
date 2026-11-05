@@ -1,0 +1,29 @@
+{
+  "years": [
+    {
+      "year": "2026",
+      "items": [
+        {
+          "title": "Real-Time Drowsiness Detection Using Dual MobileNetV2 Models on Desktop and Edge Devices",
+          "tags": "Computer Vision · Edge AI · MobileNetV2 · Raspberry Pi",
+          "status": { "en": "Research / Manuscript", "id": "Riset / Naskah" }
+        },
+        {
+          "title": "Low-Cost Edge AI for Food Safety and Synthetic Colorant Detection",
+          "tags": "Computer Vision · IoT · Edge AI · Food Safety",
+          "status": { "en": "Research in Progress", "id": "Riset Sedang Berjalan" }
+        },
+        {
+          "title": "AI-Based Analysis of Pole and Cable Infrastructure Using Computer Vision and GIS",
+          "tags": "Computer Vision · GIS · PostGIS · Infrastructure Analytics",
+          "status": { "en": "Research in Progress", "id": "Riset Sedang Berjalan" }
+        },
+        {
+          "title": "AI-Based Forest and Land Fire Monitoring in South Kalimantan",
+          "tags": "Environmental AI · Remote Sensing · Computer Vision",
+          "status": { "en": "Research Proposal", "id": "Proposal Riset" }
+        }
+      ]
+    }
+  ]
+}

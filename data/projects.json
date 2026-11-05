@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "name": "Drowsiness Edge AI",
+      "description": { "en": "Real-time driver drowsiness detection using lightweight deep-learning models.", "id": "Deteksi kantuk pengemudi secara real-time menggunakan model deep learning ringan." },
+      "url": "https://github.com/Rafie93"
+    },
+    {
+      "name": "Food Safety Edge AI",
+      "description": { "en": "Low-cost sensing and computer vision for food-colorant analysis.", "id": "Sensor berbiaya rendah dan computer vision untuk analisis pewarna makanan." },
+      "url": "https://github.com/Rafie93"
+    },
+    {
+      "name": "Pole & Cable AI",
+      "description": { "en": "WebGIS and computer vision for telecommunications infrastructure assessment.", "id": "WebGIS dan computer vision untuk penilaian infrastruktur telekomunikasi." },
+      "url": "https://github.com/Rafie93"
+    },
+    {
+      "name": "Environmental AI",
+      "description": { "en": "Research platform for AI-assisted forest and land fire analysis.", "id": "Platform riset untuk analisis kebakaran hutan dan lahan berbantuan AI." },
+      "url": "https://github.com/Rafie93"
+    },
+    {
+      "name": "VR Serious Games",
+      "description": { "en": "Low-cost VR simulation experiments using embedded sensors and interactive environments.", "id": "Eksperimen simulasi VR berbiaya rendah dengan sensor tertanam dan lingkungan interaktif." },
+      "url": "https://github.com/Rafie93"
+    },
+    {
+      "name": "SIAMANG",
+      "description": { "en": "Experimental AI working-partner system for research and software development workflows.", "id": "Sistem mitra kerja AI eksperimental untuk alur kerja riset dan pengembangan perangkat lunak." },
+      "url": "https://github.com/Rafie93"
+    }
+  ]
+}
